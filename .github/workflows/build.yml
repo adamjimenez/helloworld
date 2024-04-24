@@ -25,7 +25,7 @@ jobs:
           mkdir new
           cd new
           git init
-          git remote add origin https://adamjimenez:${{ secrets.SSH_KEY }}@github.com/adamjimenez/shiftadmin-builds.git
+          git remote add origin https://${{ GITHUB_REPOSITORY_OWNER }}:${{ secrets.SSH_KEY }}@github.com/${{ GITHUB_REPOSITORY }}-builds.git
           git pull origin master
           rm -Rf *
           cp -r ../dist/* .
