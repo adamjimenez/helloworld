@@ -13,4 +13,4 @@ jobs:
     - name: Compress action step
       run: cd dist; zip -r ../dist.zip *; cd ..
     - name: Deploy using curl POST
-      run: curl -X POST ${{ secrets.DEPLOY_URL }} -T dist.tar.gz
+      run: curl -X POST ${{ secrets.DEPLOY_URL }} -T dist.zip
