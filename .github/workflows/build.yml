@@ -11,13 +11,6 @@ jobs:
     - name: Build project
       run: npm run build
     - name: Compress action step
-      uses: a7ul/tar-action@v1.1.0
-      id: compress
-      with:
-        command: c
-        cwd: ./
-        files: |
-            ./dist/*
-        outPath: dist.tar.gz
+      run: cd dist; zip -r ../dist.zip *; cd..
     - name: Deploy using curl POST
       run: curl -X POST ${{ secrets.DEPLOY_URL }} -T dist.tar.gz
