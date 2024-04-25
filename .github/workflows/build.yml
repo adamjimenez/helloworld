@@ -1,4 +1,4 @@
-name: deploy files
+name: Build and deploy
 on: [push]
 jobs:
   build:
